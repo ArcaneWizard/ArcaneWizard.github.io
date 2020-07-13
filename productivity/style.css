@@ -1,0 +1,61 @@
+body {
+    --background-color: rgb(255, 255, 255);
+    --topTab-color: rgb(82, 180, 245);
+    --secondTab-color: rgb(127, 134, 139);
+    --font-color: rgb(0, 0, 0);
+    background-color: var(--background-color);
+}
+
+#header {
+    display: inline-block;
+    color: var(--font-color);
+}
+
+#edit {
+    text-align: center;
+    padding-right: 1em;
+    background-color: var(--topTab-color)
+}
+
+
+#tabBox {
+    position: relative;
+    right: 34%;
+    bottom: 0.4em;
+    display: inline-block;
+}
+
+#editBox {
+    position: relative;
+    left: 34%;
+    bottom: 0.4em;
+    display: inline-block;
+}
+
+.activityButton {
+    display: inline-block;
+    text-align: center;
+    padding: 0.2em 1em;
+    margin: 0em 0.3em;
+}
+
+#ogProClone {
+    display: none;
+}
+
+#alterButtons {
+    display: none;
+    text-align: center;
+    background-color: var(--secondTab-color);
+    padding: 0em 0em 1em 0em;
+}
+
+#myChart {
+    padding: 0.5em 0em;
+}
+
+#buttons {
+    text-align: center;
+    padding: 1em 0em;
+    background-color: var(--secondTab-color)
+}
