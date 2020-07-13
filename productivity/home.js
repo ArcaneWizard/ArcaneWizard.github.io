@@ -122,7 +122,7 @@ function clearCategories() {
 
 //change tab
 function changeTab() {
-    window.location.href = '../activity/activity.html';
+    window.location.href = '../index.html';
 }
 
 //change to dark or light mode
