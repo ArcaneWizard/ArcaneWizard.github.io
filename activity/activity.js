@@ -94,7 +94,7 @@ function clearCategories() {
 
 //change tab
 function changeTab() {
-    window.location.href = '../productivity/home.html';
+    window.location.href = '../index.html';
 }
 
 //change to light or dark mode {

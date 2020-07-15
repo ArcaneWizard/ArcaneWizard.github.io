@@ -14,4 +14,4 @@ Features:
 - Get reminded to fill out ur activity/prodictivty every 30 min 
 
 Code Notes:
-- index.html is associated with the JavaScript and CSS files in the activity folder.
+- index.html is associated with the JavaScript and CSS files in the productivity folder.

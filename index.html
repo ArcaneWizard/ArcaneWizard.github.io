@@ -4,39 +4,35 @@
 
 <head>
     <title>Time Keeper</title>
-    <link href="activity/style.css" rel="stylesheet" type="text/css" />
+    <link href="productivity/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
     <div id="edit">
-        <div id="tabBox2" onclick="changeTab()"><button>Mode</button></div>
-        <div id="header2"><h1>Activity</h1></div>
-        <div id="tabBox" onclick="changeDesignMode()"><button id="modeButton">Dark Mode</button></div>
+        <div id="tabBox" onclick="changeTab()">
+            <button id="activity">Mode</button>
+        </div>
+        <div id="header"><h1>Productivity</h1></div>
+        <div id="editBox" onclick="editMode()"><button>Edit</button></div>
+    </div>
+
+    <div id="buttons">
+        <button id="ogProClone" class="activityButton" onclick="selectProductivityCategory()">Took a break</button>
     </div>
 
     <div id="alterButtons">
-        <button class="activityButton" onclick="updateActivity()">+</button>
-        <button class="activityButton" onclick="removeActivity()">-</button>
-        <input type="text" placeholder="Enter Activity..." id="enterActivityField">
-        <input type="text" placeholder="Enter Time..." id="enterTimeField">
+        <button class="activityButton" onclick="addNewCategory()">+</button>
+        <button class="activityButton" onclick="removeCategory()">-</button>
+        <input type="text" placeholder="Enter Category..." id="enterCategoryField">
         <button class="activityButton" onclick="clearCategories()">Clear</button>
-
     </div>
 
-    <div id="graphs">
-        <div id="bar">
-            <canvas id="myChart2" width="100%" height="50%"></canvas>
-        </div>
-        <div id="doughnut">
-            <canvas id="myChart" width="100%" height="100%"></canvas>
-        </div>
-    </div>
-
+    <canvas id="myChart" width="300px" height="80px"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="activity/activityChart.js"></script>
-    <script src="activity/activity.js"></script>
-    <script src="Notifications/notification.js"></script>
+    <script src="productivity/chart.js"></script>
+    <script src="productivity/home.js"></script>
+    <script src="../Notifications/notification.js"></script>
 </body>
 
 </html>
