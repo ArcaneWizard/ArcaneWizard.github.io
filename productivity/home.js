@@ -3,6 +3,7 @@ const alterButtons = document.getElementById("alterButtons");
 const enterCategoryField = document.getElementById("enterCategoryField");
 const productivityButtons = document.getElementById("buttons");
 const productivityButton = productivityButtons.childNodes[1];
+const lastTime = document.getElementById("Last Time");
 const body = document.body;
 
 setup();
@@ -23,7 +24,11 @@ function setup() {
         addCategory(category);
     });
 
-    refreshChart()
+    refreshChart();
+    
+    //Show the last time the chart was updated
+    if (localStorage.getItem("last_Time_P"))
+        lastTime.textContent = "Last Update: " + localStorage.getItem("last_Time_P");
 }
 
 //USER INPUT----------------------------------------------------
@@ -42,6 +47,23 @@ function selectProductivityCategory() {
     localStorage.setItem("productivity_Values", times.toString());
     
     refreshChart();
+
+    let hours = new Date().getHours();
+    let min = new Date().getMinutes();
+    let mid = " AM";        
+ 
+    if (hours == 0)
+        mid = " AM";
+    if (hours >= 12) {
+        hours -= 12;
+        mid = " PM";
+    }
+    
+    if (min <= 9)
+        min = "0" + min;
+    
+    lastTime.textContent = "Last Update: " + hours + ":" + min + mid;
+    localStorage.setItem("last_Time_P", hours + ":" + min + mid);
 }
 
 

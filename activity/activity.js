@@ -3,13 +3,21 @@ const alterButtons = document.getElementById("alterButtons");
 const enterActivityField = document.getElementById("enterActivityField");
 const enterTimeField = document.getElementById("enterTimeField");
 const modeButton = document.getElementById("modeButton");
+const lastTime = document.getElementById("Last Time");
 const body = document.body;
 
-refreshChart();
-setDesign();
+setup();
 
-//USER INPUT----------------------------------------------------
+function setup() 
+{
+    //Update the design mode (light vs dark) and the charts with saved data
+    refreshChart();
+    setDesign();
 
+    //Show the last time an activity was updated
+    if (localStorage.getItem("last_Time_A"))
+        lastTime.textContent = "Last Update: " + localStorage.getItem("last_Time_A");
+}
 
 //EDIT SOMETHING------------------------------------------------------
 
@@ -38,9 +46,26 @@ function updateActivity() {
                 times.push(time);
             }
         }
+        
+        let hours = new Date().getHours();
+        let min = new Date().getMinutes();
+        let mid = " AM";        
+
+        if (hours == 0)
+            mid = " AM";
+        if (hours >= 12) {
+            hours -= 12;
+            mid = " PM";
+        }
+        
+        if (min <= 9)
+            min = "0" + min;
+        
+        lastTime.textContent = "Last Update: " + hours + ":" + min + mid;
 
         localStorage.setItem("activity_Keys", activities.toString());
         localStorage.setItem("activity_Values", times.toString());
+        localStorage.setItem("last_Time_A", hours + ":" + min + mid);
 
         refreshChart();
     }

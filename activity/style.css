@@ -51,6 +51,24 @@ body {
     display: none;
 }
 
+#graphs {
+    margin-top: 1em;
+    height: 18em;
+}
+
+#extraInfo {
+    margin-top: 7em;
+    text-align: center;
+}
+
+.info {
+    display: inline-block;
+    padding: 1em 1em;
+    color: var(--font-color);
+    font-size: 18px;
+    text-align: center;
+}
+
 #alterButtons {
     text-align: center;
     background-color: var(--secondTab-color); 

@@ -1,3 +1,6 @@
+
+let nextNotification = document.getElementById("Next Notification");
+
 const notificationInterval = 30;
 
 var timer;
@@ -37,9 +40,11 @@ document.onbeforeunload = function() {
     localStorage.setItem('currentTime', currentTime);
 }
 
+displayTimer();
 setInterval(displayTimer, 5000);
 function displayTimer() {
-    console.log((targetTime.getTime() - currentTime.getTime()) / 60000);
+    localStorage.setItem("next_Notification", Math.ceil((targetTime.getTime() - currentTime.getTime()) / 60000) + " min");
+    nextNotification.textContent = "Next Reminder: " + localStorage.getItem("next_Notification");
 }
 
 //Ask to show notifications

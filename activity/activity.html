@@ -21,7 +21,6 @@
         <input type="text" placeholder="Enter Activity..." id="enterActivityField">
         <input type="text" placeholder="Enter Time..." id="enterTimeField">
         <button class="activityButton" onclick="clearCategories()">Clear</button>
-
     </div>
 
     <div id="graphs">
@@ -31,6 +30,11 @@
         <div id="doughnut">
             <canvas id="myChart" width="100%" height="100%"></canvas>
         </div>
+    </div>
+
+    <div id="extraInfo">
+        <p class="info" id="Last Time">Last Update:</p>
+        <p class="info" id="Next Notification">Next Notification: Updating...</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
